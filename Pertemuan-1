@@ -1,0 +1,4 @@
+ C:\laragon\www\PWD\2526o\ti1a\0344300002-
+PWD-TI1A-2526O
+1..16 | ForEach-Object { New-Item -ItemType Directory -Name 
+("pertemuan-{0:D2}" -f $_) }
