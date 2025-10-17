@@ -13,4 +13,5 @@ Hari ini, Rabu 08-10-25, saya belajar:
   <li>membuat styling untuk selector ID section#contact groups selector</li>
   <li>membuat styling untuk selector ID section#contact groups selector h2</li>
   <li>section#contact upgrade struktur form</li>
+   <li>section#contact styling label</li>
 </ol>
