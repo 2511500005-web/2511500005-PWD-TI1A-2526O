@@ -144,6 +144,10 @@ nav {
     padding: 5px 0;
 } 
 
+nav.active {
+    display: flex;
+}
+
 header {
 padding: 16px;
 position: sticky;
