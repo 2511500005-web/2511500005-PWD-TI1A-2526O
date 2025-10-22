@@ -31,6 +31,24 @@
  padding: 6px 12px;
     }
    
+    header li a:hover {
+background-color: #85020d;
+border-radius: 6px;
+transition: background-color 0.3s ease;
+}
+
+header li a:focus {
+outline: 2px solid #fff;
+outline-offset: 2px;
+border-radius: 6px;
+background-color: rgba(255, 255, 255, 0.15);
+}
+
+header li a:active {
+background-color: #cc04a1;
+transform: translateY(1px);
+}
+
     #home p {
         text-align: justify;
     }
