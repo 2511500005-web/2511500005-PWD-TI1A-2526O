@@ -45,13 +45,15 @@
               <form action="" method="GET">
                 <label for="txtNama"><span>Nama:</span>
                 <input type="text" id="txtNama" name="txtNama" placeholder="MASUKKAN NAMA" required autocomplete="name">
-                </label>
+            
 
                 <label for="txtEmail"><span>Email:</span>
                 <input type="email" id="txtEmail" name="txtEmail" required><br><br>
 
                 <label for="txtPesan"><span>Pesan:</span></label><br>
                 <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="TULIS PESAN ANDA" required></textarea><br><br>
+<small id="charCount">0/200 karakter</small>
+                </label>
 
                 <button type="submit">Kirim</button>
                 <button type="reset">Batal</button>
