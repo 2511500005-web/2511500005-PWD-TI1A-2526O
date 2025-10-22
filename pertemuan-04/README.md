@@ -11,4 +11,5 @@ HARI INI, RABU, 15-10-25, SAYA MEMPELAJARI:
 <li>“styling section#home”</li>
 <li>styling footer</li> 
 <li>styling navigasi</li> 
+<li>styling header mode mobile</li>
 </OL>
