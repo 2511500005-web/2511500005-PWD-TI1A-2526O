@@ -32,4 +32,4 @@ const counter = document.getElementById('charCount');
 if (!label || !span || !wrapper || !counter) return;
 const isMobile = window.matchMedia('(max-width: 600px)').matches;
 if (isMobile) 
-label.style.display = 'flex'; 
+label.style.display = 'flex';
