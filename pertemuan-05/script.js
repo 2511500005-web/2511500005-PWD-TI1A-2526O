@@ -36,4 +36,4 @@ errorMsg.className = "error-msg";
 errorMsg.textContent = message;
 input.style.border = "1px solid red";
 input.parentElement.appendChild(errorMsg);
-} 
+}
