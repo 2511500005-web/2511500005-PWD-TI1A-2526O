@@ -1,4 +1,15 @@
-  #about
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #492d02;
+    color: #333;
+    line-height: 1.5;
+    }
+    s
         #contact {
   background-color: #ffffff;
   border-radius: 10px;
