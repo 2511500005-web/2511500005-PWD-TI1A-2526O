@@ -135,6 +135,15 @@ padding: 10px;
     left: 16px;
 }
 
+nav {
+    display: none;
+    flex-direction: column;
+    background-color: hsl(36, 92%, 14%);
+    position: absolute;
+    width: 100%;
+    padding: 5px 0;
+} 
+
 header {
 padding: 16px;
 position: sticky;
