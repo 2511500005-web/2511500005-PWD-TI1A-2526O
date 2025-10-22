@@ -128,6 +128,13 @@ padding: 10px;
 } 
 
 @media (max-width: 600px) {
+.menu-toggle {
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
 header {
 padding: 16px;
 position: sticky;
