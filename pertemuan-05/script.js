@@ -60,4 +60,4 @@ document.querySelectorAll(".error-msg").forEach(small => {
 const target = document.getElementById(small.dataset.forId);
 if (target) alignErrorMessage(small, target);
 });
-}); 
+});
