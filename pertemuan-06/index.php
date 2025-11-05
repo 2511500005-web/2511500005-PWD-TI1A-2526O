@@ -30,29 +30,17 @@ echo "halo,dunia!<br>", "nama saya melvyn mahinda jadi";
             <p>Selamat datang di halaman beranda.</p>
         </section>
         <section id="about">
-            <?php
-            echo $nim = "2511500005<br>";
-            echo $nama = "Melvyn Mahinda Jadi<br>";
-            echo $tempatLahir = "PGK<br>";
-            echo $tanggalLahir = "06-01-2006<br>";
-            echo $hobi = "Menggambar komik sederhana<br>";
-            echo $pasangan = "Belum menikah<br>";
-            echo $pekerjaan = "Mahasiswa<br>";
-            echo $namaOrangTua = "Sherlie (ibu) & Hendy (ayah)<br>";
-            echo $namaKakak = "Tidak ada<br>";
-            echo $namaAdik = "Derren Hadianto<br>";
-            ?> 
             <h2>TENTANG KAMI</h2>
-            <p>👨‍🎓 <strong><?php echo $nim = "2511500005<br>"; ?></strong></p>
-    😊 <strong>Nama Lengkap:</strong> <?php echo $nama = "Melvyn Mahinda Jadi<br>"; ?></p>
-    📍 <strong>Tempat Lahir:</strong> <?php echo $tempatLahir = "PGK<br>"; ?></p>
-    🎂 <strong>Tanggal Lahir:</strong> <?php echo $tanggalLahir = "06-01-2006<br>"; ?></p>
-    🎨 <strong>Hobi:</strong> <?php echo $hobi = "Menggambar komik sederhana<br>"; ?></p>
-    💞 <strong>Pasangan:</strong> <?php echo $pasangan = "Belum menikah<br>"; ?></p>
-    💼 <strong>Pekerjaan:</strong> <?php echo $pekerjaan = "Mahasiswa<br>"; ?></p>
-    👪 <strong>Nama Orang Tua:</strong> <?php echo $namaOrangTua = "Sherlie (ibu) & Hendy (ayah)<br>"; ?></p>
+            <p>👨‍🎓 <strong><?php echo $nim = "2511500005<br>"; ?></strong><p>
+    😊 <strong>Nama Lengkap:</strong> <?php echo $nama = "Melvyn Mahinda Jadi<br>"; ?><p>
+    📍 <strong>Tempat Lahir:</strong> <?php echo $tempatLahir = "PGK<br>"; ?><p>
+    🎂 <strong>Tanggal Lahir:</strong> <?php echo $tanggalLahir = "06-01-2006<br>"; ?><p>
+    🎨 <strong>Hobi:</strong> <?php echo $hobi = "Menggambar komik sederhana<br>"; ?><p>
+    💞 <strong>Pasangan:</strong> <?php echo $pasangan = "Belum menikah<br>"; ?><p>
+    💼 <strong>Pekerjaan:</strong> <?php echo $pekerjaan = "Mahasiswa<br>"; ?><p>
+    👪 <strong>Nama Orang Tua:</strong> <?php echo $namaOrangTua = "Sherlie (ibu) & Hendy (ayah)<br>"; ?><p>
     🚫 <strong>Nama Kakak:</strong> <?php echo $namaKakak = "Tidak ada<br>"; ?></p>
-    👦 <strong>Nama Adik:</strong> <?php echo $namaAdik = "Derren Hadianto<br>"; ?></p>
+    👦 <strong>Nama Adik:</strong> <?php echo $namaAdik = "Derren Hadianto<br>"; ?><p> 
         </section>
         <section id="contact">
             <h2>KONTAK KAMI</h2>
@@ -94,3 +82,42 @@ echo "halo,dunia!<br>", "nama saya melvyn mahinda jadi";
 
     echo "IPK Saya adalah: " . number_format($ipk, 2);
     ?>
+    Nama Matakuliah ke-1   :      Algoritma dan Struktur Data => $namaMatkul1
+SKS            :    4 => $sksMatkul1
+Kehadiran        :    90 => $nilaiHadir1
+Tugas            :    60 => $nilaiTugas1
+UTS            :    80 => $nilaiUTS    1
+UAS            :    70 => $nilaiUAS1
+Nilai Akhir        :    73 => $nilaiAkhir1
+Grade            :    B => $grade1
+Angka Mutu        :    3.00 => $mutu1
+Bobot            :    12 => $bobot1
+Status            :    Lulus => $status1
+
+Nama Matakuliah ke-2   :      Agama => $namaMatkul2
+SKS            :    2 => $sksMatkul2
+Kehadiran        :    70 => $nilaiHadir2
+Tugas            :    50 => $nilaiTugas2
+UTS            :    60 => $nilaiUTS    2
+UAS            :    80 => $nilaiUAS2
+Nilai Akhir        :    67 => $nilaiAkhir2
+Grade            :    B- => $grade2
+Angka Mutu        :    2.70 => $mutu2
+Bobot            :    5.40 => $bobot2
+Status            :    Lulus => $status5
+
+Nama Matakuliah ke-5   :      Pemrograman Web Dasar => $namaMatkul5
+SKS            :    3 => $sksMatkul5
+Kehadiran        :    69 => $nilaiHadir5
+Tugas            :    80 => $nilaiTugas5
+UTS            :    90 => $nilaiUTS    5
+UAS            :    100 => $nilaiUAS5
+Nilai Akhir        :    90 => $nilaiAkhir5
+Grade            :    E => $grade5
+Angka Mutu        :    0.00 => $mutu5
+Bobot            :    0.00 => $bobot5
+Status            :    Gagal => $status5
+
+Total Bobot = 54 => $totalBobot
+Total SKS = 20 => $totalSKS
+IPK = 2.70 => $IPK
