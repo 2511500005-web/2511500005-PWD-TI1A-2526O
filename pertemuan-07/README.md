@@ -7,4 +7,5 @@ NAMA - MELVYN MAHINDA HADI<BR>
 <LI>'COPY DAN RENAME INDEX.PHP MENJADI GET.PHP, KEMUDIAN BUAT FILE BARU BERNAMA GET_PROSES.PHP'</LI>
 <li>isi get_proses.php</li>
 <li>session di get_proses.php</li>
-</OL>
+<li>menampilkan session dari get_proses.php ke get.php</li>
+<li>redirect dari get_proses.php ke get.php</li>
