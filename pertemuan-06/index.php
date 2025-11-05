@@ -24,21 +24,35 @@
     <main>
         <section id="home">
             <h2>WELCOME</h2>
+            <?php
+echo "halo,dunia!<br>", "nama saya melvyn mahinda jadi";
+?>
             <p>Selamat datang di halaman beranda.</p>
         </section>
         <section id="about">
+            <?php
+            echo $nim = "2511500005<br>";
+            echo $nama = "Melvyn Mahinda Jadi<br>";
+            echo $tempatLahir = "PGK<br>";
+            echo $tanggalLahir = "06-01-2006<br>";
+            echo $hobi = "Menggambar komik sederhana<br>";
+            echo $pasangan = "Belum menikah<br>";
+            echo $pekerjaan = "Mahasiswa<br>";
+            echo $namaOrangTua = "Sherlie (ibu) & Hendy (ayah)<br>";
+            echo $namaKakak = "Tidak ada<br>";
+            echo $namaAdik = "Derren Hadianto<br>";
+            ?> 
             <h2>TENTANG KAMI</h2>
-            <p>👨‍🎓 <strong>NIM:</strong> 2511500005 <br>
-    😊 <strong>Nama Lengkap:</strong> Melvyn Mahinda Jadi <br>
-    📍 <strong>Tempat Lahir:</strong> PGK <br>
-    🎂 <strong>Tanggal Lahir:</strong> 06-01-2006 <br>
-    🎨 <strong>Hobi:</strong> Menggambar komik sederhana <br>
-    💞 <strong>Pasangan:</strong> Belum menikah <br>
-    💼 <strong>Pekerjaan:</strong> Mahasiswa <br>
-    👪 <strong>Nama Orang Tua:</strong> Sherlie (ibu) &amp; Hendy (ayah) <br>
-    🚫 <strong>Nama Kakak:</strong> Tidak ada <br>
-    👦 <strong>Nama Adik:</strong> Derren Hadianto <br><br>
- .</p>
+            <p>👨‍🎓 <strong><?php echo $nim = "2511500005<br>"; ?></strong></p>
+    😊 <strong>Nama Lengkap:</strong> <?php echo $nama = "Melvyn Mahinda Jadi<br>"; ?></p>
+    📍 <strong>Tempat Lahir:</strong> <?php echo $tempatLahir = "PGK<br>"; ?></p>
+    🎂 <strong>Tanggal Lahir:</strong> <?php echo $tanggalLahir = "06-01-2006<br>"; ?></p>
+    🎨 <strong>Hobi:</strong> <?php echo $hobi = "Menggambar komik sederhana<br>"; ?></p>
+    💞 <strong>Pasangan:</strong> <?php echo $pasangan = "Belum menikah<br>"; ?></p>
+    💼 <strong>Pekerjaan:</strong> <?php echo $pekerjaan = "Mahasiswa<br>"; ?></p>
+    👪 <strong>Nama Orang Tua:</strong> <?php echo $namaOrangTua = "Sherlie (ibu) & Hendy (ayah)<br>"; ?></p>
+    🚫 <strong>Nama Kakak:</strong> <?php echo $namaKakak = "Tidak ada<br>"; ?></p>
+    👦 <strong>Nama Adik:</strong> <?php echo $namaAdik = "Derren Hadianto<br>"; ?></p>
         </section>
         <section id="contact">
             <h2>KONTAK KAMI</h2>
@@ -68,4 +82,15 @@
      <script>
         alert("Halo Dunia!");
 </script>
-</body>
+</body><section id="ipk">
+    <h2>IPK SAYA</h2>
+    <?php
+    $nilai1 = 3.5;
+    $nilai2 = 3.7;
+    $nilai3 = 3.8;
+    $nilai4 = 3.6;
+
+    $ipk = ($nilai1 + $nilai2 + $nilai3 + $nilai4) / 4;
+
+    echo "IPK Saya adalah: " . number_format($ipk, 2);
+    ?>
