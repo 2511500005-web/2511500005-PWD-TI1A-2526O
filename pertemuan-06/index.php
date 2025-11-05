@@ -42,9 +42,8 @@ echo "halo,dunia!<br>", "nama saya melvyn mahinda jadi";
     🚫 <strong>Nama Kakak:</strong> <?php echo $namaKakak = "Tidak ada<br>"; ?></p>
     👦 <strong>Nama Adik:</strong> <?php echo $namaAdik = "Derren Hadianto<br>"; ?></p>
         </section>
-        </body><section id="ipk">
-    
-        <h2>IPK SAYA</h2>
+        <section id="ipk">
+    <h2>IPK SAYA</h2>
     <?php
     $nilai1 = 3.5;
     $nilai2 = 3.7;
