@@ -1,9 +1,20 @@
 <?php
 session_start();
-$sesname = $_SESSION["Nama"];
-$sesmail = $_SESSION["Email"];
-$sespesan = $_SESSION["Pesan"];
-echo "$sesname $sesmail $sespesan";
+
+$sesnama = "";
+if (isset($_SESSION["sesnama"])):
+  $sesnama = $_SESSION["sesnama"];
+endif;
+
+$sesemail = "";
+if (isset($_SESSION["sesemail"])):
+  $sesemail = $_SESSION["sesemail"];
+endif;
+
+$sespesan = "";
+if (isset($_SESSION["sespesan"])):
+  $sespesan = $_SESSION["sespesan"];
+endif;
 ?>
 
 <!DOCTYPE html>
@@ -41,12 +52,29 @@ echo "$sesname $sesmail $sespesan";
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
+    <section id="form-login">
+      <h2>Pendaftaran Profil Pengunjung</h2>
+      <form action="login.php" method="POST">
+
+        <label for="txtUser"><span>$NIM:</span>
+          <input type="text" id="txtUser" name="txtUser" placeholder="Masukkan NIM" required autocomplete="NIM">
+        </label>
+
+        <label for="txtPass"><span>Password:</span>
+          <input type="password" id="txtPass" name="txtPass" placeholder="Masukkan password" required autocomplete="current-password">
+        </label>
+
+        <button type="submit">Login</button>
+        <button type="reset">Batal</button>
+      </form>
+
     <section id="about">
       <?php
       $nim = 2511500010;
       $NIM = '0344300002';
       $nama = "Say'yid Abdullah";
       $Nama = 'Al\'kautar Benyamin';
+      $tempat = "Jebus";
       ?>
       <h2>Tentang Saya</h2>
       <p><strong>NIM:</strong>
@@ -59,19 +87,19 @@ echo "$sesname $sesmail $sespesan";
         echo $Nama;
         ?> &#128526;
       </p>
-      <p><strong>Tempat Lahir:</strong> Pangkalpinang</p>
+      <p><strong>Tempat Lahir:</strong> <?php echo $tempat; ?></p>
       <p><strong>Tanggal Lahir:</strong> 1 Januari 2000</p>
       <p><strong>Hobi:</strong> Memasak, coding, dan bermain musik &#127926;</p>
       <p><strong>Pasangan:</strong> Belum ada &hearts;</p>
       <p><strong>Pekerjaan:</strong> Dosen di ISB Atma Luhur &copy; 2025</p>
       <p><strong>Nama Orang Tua:</strong> Bapak Setiawan dan Ibu Maria</p>
       <p><strong>Nama Kakak:</strong> Antonius Setiawan</p>
-      <p><strong>Nama Adik:</strong> Christina Setiawan</p>
+      <p><strong>Nama Adik:</strong> <?php echo $sespesan ?></p>
     </section>
 
     <section id="contact">
       <h2>Kontak Kami</h2>
-      <form action="post_proses.php" method="POST">
+      <form action="proses.php" method="POST">
 
         <label for="txtNama"><span>Nama:</span>
           <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
@@ -90,11 +118,17 @@ echo "$sesname $sesmail $sespesan";
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>
-      <p>TERIMA KASIH TELAH MENGHUBUNGI KAMI!:
-        <label> <?php echo $sesname; ?></strong></label>
-        <label> <?php echo $sesmail; ?></strong></label>
-        <label> <?php echo $sespesan; ?></strong></label>
-      </p>
+
+      <?php if (!empty($sesnama)): ?>
+        <br><hr>
+        <h2>Yang menghubungi kami</h2>
+        <p><strong>Nama :</strong> <?php echo $sesnama ?></p>
+        <p><strong>Email :</strong> <?php echo $sesemail ?></p>
+        <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
+      <?php endif; ?>
+
+
+
     </section>
   </main>
 
