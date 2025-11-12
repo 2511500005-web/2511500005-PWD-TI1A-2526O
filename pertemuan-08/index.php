@@ -52,19 +52,53 @@ endif;
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
-    <section id="form-login">
-      <h2>Pendaftaran Profil Pengunjung</h2>
-      <form action="login.php" method="POST">
+     <section id="form-pendaftaran">
+      <h2>PENDAFTARAN PROFIL PENGUNJUNG</h2>
+      <form action="proses.php" method="POST">
 
-        <label for="txtUser"><span>$NIM:</span>
-          <input type="text" id="txtUser" name="txtUser" placeholder="Masukkan NIM" required autocomplete="NIM">
+        <label for="txtNama"><span>$NIM:</span>
+          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
         </label>
 
-        <label for="txtPass"><span>Password:</span>
-          <input type="password" id="txtPass" name="txtPass" placeholder="Masukkan password" required autocomplete="current-password">
+        <label for="txtNamaLengkap"><span>NAMA LENGKAP:</span>
+          <input type="text" id="txtNamaLengkap" name="txtNamaLengkap" placeholder="Masukkan Nama Lengkap" required autocomplete="name">
         </label>
 
-        <button type="submit">Login</button>
+        <label for="txtTempatLahir"><span>tempat lahir:</span>
+          <textarea id="txtTempatLahir" name="txtTempatLahir" rows="4" placeholder="Tulis tempat lahir anda..." required></textarea>
+          <small id="charCount">0/200 karakter</small>
+        </label>
+
+        <label for="txtTanggalLahir"><span>tanggal lahir:</span>
+          <input type="date" id="txtTanggalLahir" name="txtTanggalLahir" required>
+        </label>
+
+        <label for="txtHobi"><span>hobi:</span>
+          <textarea id="txtHobi" name="txtHobi" rows="4" placeholder="Tulis hobi anda..." required></textarea>
+          <small id="charCount">0/200 karakter</small>
+        </label>
+
+<formlabel for="txtPasangan"><span>pasangan:</span>
+          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan pasangan" required autocomplete="name">
+        </label>
+
+        <label for="txtPekerjaan"><span>pekerjaan:</span>
+          <input type="text" id="txtPekerjaan" name="txtPekerjaan" placeholder="Masukkan pekerjaan" required autocomplete="name">
+        </label>
+
+        <label for="txtNamaOrtu"><span>nama orang tua:</span>
+          <input type="text" id="txtNamaOrtu" name="txtNamaOrtu" placeholder="Masukkan nama orang tua" required autocomplete="name">
+        </label>
+
+        <label for="txtNamaKakak"><span>nama kakak:</span>
+          <input type="text" id="txtNamaKakak" name="txtNamaKakak" placeholder="Masukkan nama kakak" required autocomplete="name">
+        </label>
+
+<formlabel for="txtNamaAdik"><span>nama adik:</span>
+          <input type="text" id="txtNamaAdik" name="txtNamaAdik" placeholder="Masukkan nama adik" required autocomplete="name">
+        </label>
+
+        <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>
 
