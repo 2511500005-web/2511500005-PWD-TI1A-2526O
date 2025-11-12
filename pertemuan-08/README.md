@@ -2,11 +2,11 @@
 
 silahkan sesuaikan dengan milik kalian masing-masing:<br><br>
 Hari ini, Rabu 12.NOV.2025, saya:<br>
-NIM: 0344300002<br>
-Nama: Yohanes Setiawan Japriadi<br>
+NIM: 2511500005<br>
+Nama: MELVYN MAHINDA HADI<br>
 Kelompok: TI1A<br>
 <br>
 Proses saya mengerjakan UTS ini sebagai berikut:<br>
 <ol>
-  <li>silahkan diisi sesuai proses pengerjaan kalian masing-masing</li>
+  <<LI>COPY SELURUH FILE DARI E-LEARNING UNTUK LATIHAN PERTEMUAN KE-8</LI>
 </ol>
