@@ -8,5 +8,5 @@ Kelompok: TI1A<br>
 <br>
 Proses saya mengerjakan UTS ini sebagai berikut:<br>
 <ol>
-  <<LI>COPY SELURUH FILE DARI E-LEARNING UNTUK LATIHAN PERTEMUAN KE-8</LI>
+  <<LI>COPY SELURUH FILE DARI E-LEARNING UNTUK UTS PERTEMUAN KE-8</LI>
 </ol>
