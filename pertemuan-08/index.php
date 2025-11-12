@@ -56,8 +56,8 @@ endif;
       <h2>PENDAFTARAN PROFIL PENGUNJUNG</h2>
       <form action="proses.php" method="POST">
 
-        <label for="txtNama"><span>$NIM:</span>
-          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
+        <label for="txtNIM"><span>NIM:</span>
+          <input type="text" id="txtNIM" name="txtNIM" placeholder="Masukkan NIM" required autocomplete="name">
         </label>
 
         <label for="txtNamaLengkap"><span>NAMA LENGKAP:</span>
