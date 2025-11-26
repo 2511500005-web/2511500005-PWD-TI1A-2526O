@@ -107,17 +107,30 @@ if (isset($_SESSION["sespesan"])) {
         <button type="reset">Batal</button>
       </form>
 
-        <?php foreach ($fieldConfig as $key => $field): ?>
-          <label for="txt<?php echo ucfirst($key); ?>"><span><?php echo $field["label"]; ?>:</span>
-            <input type="text" id="txt<?php echo ucfirst($key); ?>" name="txt<?php echo ucfirst($key); ?>" placeholder="Masukkan <?php echo $field["label"]; ?>" required>
-           </label>
+       <?php
+$fieldsConfig = [
+    "nama"   => ["label" => "Nama Lengkap"],
+    "email"  => ["label" => "Email"],
+    "pesan"  => ["label" => "Pesan"],
+];
+?>
+<?php foreach ($fieldsConfig as $key => $field): ?>
+    <label for="txt<?php echo ucfirst($key); ?>">
+        <span><?php echo $field["label"]; ?>:</span>
+        <input type="text"
+               id="txt<?php echo ucfirst($key); ?>"
+               name="txt<?php echo ucfirst($key); ?>"
+               placeholder="Masukkan <?php echo $field["label"]; ?>"
+               required>
+</label>
+<?php endforeach; ?>
+
        
-           <?php endforeach; ?>
+          
 
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>
-
       <?php
       $txtNim = $_SESSION["biodata"]["nim"] ?? "";
 
@@ -148,44 +161,27 @@ $fields = [
 
     <section id="about">
       <h2>Tentang Saya</h2>
-      <?php foreach ($fieldsConfig as $key => $metadata): ?>
       <?php
-$biodata = [
-    "nim"        => "a",
-    "nama"       => "b 😎",
-    "tempat"     => "c",
-    "tanggal"    => "d",
-    "hobi"       => "e 🦋",
-    "pasangan"   => "f ♥",
-    "pekerjaan"  => "g © 2025",
-    "ortu"       => "h",
-    "kakak"      => "i",
-    "adik"       => "j"
-];
-
 $fieldsConfig = [
-    "nim"        => ["label" => "NIM",               "suffix" => ""],
-    "nama"       => ["label" => "Nama Lengkap",      "suffix" => "😎"],
-    "tempat"     => ["label" => "Tempat Lahir",      "suffix" => ""],
-    "tanggal"    => ["label" => "Tanggal Lahir",     "suffix" => ""],
-    "hobi"       => ["label" => "Hobi",              "suffix" => "🦋"],
-    "pasangan"   => ["label" => "Pasangan",          "suffix" => "♥"],
-    "pekerjaan"  => ["label" => "Pekerjaan",         "suffix" => "© 2025"],
-    "ortu"       => ["label" => "Nama Orang Tua",    "suffix" => ""],
-    "kakak"      => ["label" => "Nama Kakak",        "suffix" => ""],
-    "adik"       => ["label" => "Nama Adik",         "suffix" => ""],
-];
-?>
+    "nama"      => ["label" => "Nama Lengkap",      "suffix" => "😎"],
+    "tempat"    => ["label" => "Tempat Lahir",      "suffix" => ""],
+    "tanggal"   => ["label" => "Tanggal Lahir",     "suffix" => ""],
+    "hobi"      => ["label" => "Hobi",              "suffix" => "🦋"],
+    "pasangan"  => ["label" => "Pasangan",          "suffix" => "♥"],
+    "pekerjaan" => ["label" => "Pekerjaan",         "suffix" => "© 2025"],
+    "ortu"      => ["label" => "Nama Orang Tua",    "suffix" => ""],
+    "kakak"     => ["label" => "Nama Kakak",        "suffix" => ""],
+    "adik"      => ["label" => "Nama Adik",         "suffix" => ""],
+   ];
+   ?>
 
-<h2>Tentang Saya</h2>
-<?php foreach ($fieldsConfig as $key => $metadata): ?>
-    <p>
-        <strong><?= htmlspecialchars($metadata["label"]) ?>:</strong>
-        <?= htmlspecialchars($biodata[$key] ?? "") ?>
-        <?= $metadata["suffix"] ?>
-    </p>
-<?php endforeach; ?>
-
+      <?php foreach ($fieldsConfig as $key => $metadata): ?>
+        <p>
+          <strong> <?= $metadata["label"] ?>: </strong>
+         <?= htmlspecialchars($biodata[$key] ?? "") ?>
+       <?=$metadata["suffix"] ?>
+      </p>
+      <?php endforeach; ?>
     </section>
 
     <section id="contact">

@@ -17,6 +17,7 @@
   <li>Tambahkan baris kode baru setelah baris Tentang Saya untuk menampilkan array menggunakan looping
 foreach</li>
 <li>Hapus baris 130-140, karena sudah diakomodir menggunakan perulangan foreach</li>
+<li>tambahkan function bersihkan, return htmlspecialchars, function tidak Kosong, return strlen</li>
 
 
   NAMA MELVYN
