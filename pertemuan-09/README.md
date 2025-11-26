@@ -19,6 +19,7 @@ foreach</li>
 <li>Hapus baris 130-140, karena sudah diakomodir menggunakan perulangan foreach</li>
 <li>tambahkan function bersihkan, return htmlspecialchars, function tidak Kosong, return strlen</li>
 <li>tambahkan function format tanggal, tampilkan biodata</li>
+<li>mengganti kode fbaris 178 dengan kode tampilkan biodata </li>
 
 
   NAMA MELVYN

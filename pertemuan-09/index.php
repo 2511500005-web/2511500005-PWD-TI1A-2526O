@@ -175,13 +175,7 @@ $fieldsConfig = [
    ];
    ?>
 
-      <?php foreach ($fieldsConfig as $key => $metadata): ?>
-        <p>
-          <strong> <?= $metadata["label"] ?>: </strong>
-         <?= htmlspecialchars($biodata[$key] ?? "") ?>
-       <?=$metadata["suffix"] ?>
-      </p>
-      <?php endforeach; ?>
+     <?=tampilkanBiodata($fieldsConfig, $_SESSION["biodata"] ?? []) ?>
     </section>
 
     <section id="contact">
