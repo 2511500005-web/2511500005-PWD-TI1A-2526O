@@ -65,20 +65,18 @@ endif;
         </label>
 
         <label for="txtTempatLahir"><span>tempat lahir:</span>
-          <textarea id="txtTempatLahir" name="txtTempatLahir" rows="4" placeholder="Tulis tempat lahir anda..." required></textarea>
-          <small id="charCount">0/200 karakter</small>
+          <input type="text" id="txtTempatLahir" name="txtTempatLahir" placeholder="Tulis tempat lahir anda..." required>
         </label>
 
         <label for="txtTanggalLahir"><span>tanggal lahir:</span>
-          <input type="date" id="txtTanggalLahir" name="txtTanggalLahir" required>
+          <input type="text" id="txtTanggalLahir" name="txtTanggalLahir" placeholder="tanggal anda" required>
         </label>
 
         <label for="txtHobi"><span>hobi:</span>
-          <textarea id="txtHobi" name="txtHobi" rows="4" placeholder="Tulis hobi anda..." required></textarea>
-          <small id="charCount">0/200 karakter</small>
+          <input type="text" id="txtHobi" name="txtHobi" placeholder="Tulis hobi anda..." required>
         </label>
 
-<formlabel for="txtPasangan"><span>pasangan:</span>
+        <label for="txtPasangan"><span>pasangan:</span>
           <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan pasangan" required autocomplete="name">
         </label>
 
@@ -94,7 +92,7 @@ endif;
           <input type="text" id="txtNamaKakak" name="txtNamaKakak" placeholder="Masukkan nama kakak" required autocomplete="name">
         </label>
 
-<formlabel for="txtNamaAdik"><span>nama adik:</span>
+        <label for="txtNamaAdik"><span>nama adik:</span>
           <input type="text" id="txtNamaAdik" name="txtNamaAdik" placeholder="Masukkan nama adik" required autocomplete="name">
         </label>
 
