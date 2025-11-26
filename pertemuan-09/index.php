@@ -4,16 +4,22 @@ session_start();
 $sesnama = "";
 if (isset($_SESSION["sesnama"])):
   $sesnama = $_SESSION["sesnama"];
+else {
+  $sesnama = "";
 }
 
 $sesemail = "";
 if (isset($_SESSION["sesemail"])):
   $sesemail = $_SESSION["sesemail"];
+else {
+  $sesemail = "";
 }
 
 $sespesan = "";
 if (isset($_SESSION["sespesan"])):
   $sespesan = $_SESSION["sespesan"];
+else {
+  $sespesan = "";
 }
 ?>
 
