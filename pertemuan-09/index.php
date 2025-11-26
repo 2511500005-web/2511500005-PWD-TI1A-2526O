@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once __DIR__ . "/fungsi.php";
+
 $sesnama = "";
 if (isset($_SESSION["sesnama"])) {
   $sesnama = $_SESSION["sesnama"];

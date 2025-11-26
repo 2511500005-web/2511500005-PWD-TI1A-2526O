@@ -20,6 +20,7 @@ foreach</li>
 <li>tambahkan function bersihkan, return htmlspecialchars, function tidak Kosong, return strlen</li>
 <li>tambahkan function format tanggal, tampilkan biodata</li>
 <li>mengganti kode fbaris 178 dengan kode tampilkan biodata </li>
+<li>di session start,tambahkan require once</li>
 
 
   NAMA MELVYN
