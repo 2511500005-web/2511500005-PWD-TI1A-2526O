@@ -121,16 +121,16 @@ if (isset($_SESSION["sespesan"])) {
       <?php
       $txtNim = $_SESSION["biodata"]["nim"] ?? "";
 
-    "tanggal"    => ["label" => "Tanggal Lahir",    "suffix" => ""],
-    "hobi"       => ["label" => "Hobi",             "suffix" => "&#127926;"],
-    "pasangan"   => ["label" => "Nama Pasangan",    "suffix" => ""],
-    "ortu"       => ["label" => "Nama Orang Tua",   "suffix => ""],
-    "pekerjaan"  => ["label" => "Pekerjaan",        "suffix" => "&#128296;"],
-    "kakak"      => ["label" => "Nama Kakak",       "suffix" => "&#127926;"],
-    "adik"       => ["label" => "Nama Adik",        "suffix" => "&#128526;"],
-    "lain"       => ["label" => "Lainnya",          "suffix" => "&copy; 2025"],
+"tanggal"    => ["label" => "Tanggal Lahir",    "suffix" => ""],
+"hobi"       => ["label" => "Hobi",             "suffix" => "&#127926;"],
+"pasangan"   => ["label" => "Nama Pasangan",    "suffix" => ""],
+"ortu"       => ["label" => "Nama Orang Tua",   "suffix" => ""],
+"pekerjaan"  => ["label" => "Pekerjaan",        "suffix" => "&#128296;"],
+"kakak"      => ["label" => "Nama Kakak",       "suffix" => "&#127926;"],
+"adik"       => ["label" => "Nama Adik",        "suffix" => "&#128526;"],
+"lain"       => ["label" => "Lainnya",          "suffix" => "&copy; 2025"],
 ];
-?>
+
 
       <?php
       $txtNmLengkap = $_SESSION["biodata"]["nama"] ?? "";
