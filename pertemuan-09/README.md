@@ -14,6 +14,8 @@
   <li>mengubah baris 10-19 menjadi bentuk array associative</li>
   <li>mengubah baris 23-32 menjadi bentuk singkat</li>
   <li>Hapus baris kode 19-67, sebagai gantinya ketikkan kode <?php sebelum section#about</li>
+  <li>Tambahkan baris kode baru setelah baris <h2>Tentang Saya</h2> untuk menampilkan array menggunakan looping
+foreach</li>
 
 
   NAMA MELVYN
