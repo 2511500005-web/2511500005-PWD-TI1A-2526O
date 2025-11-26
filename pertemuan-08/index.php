@@ -104,11 +104,11 @@ endif;
 
     <section id="about">
       <?php
-      $nim = 2511500010;
-      $NIM = '0344300002';
-      $nama = "Say'yid Abdullah";
-      $Nama = 'Al\'kautar Benyamin';
-      $tempat = "Jebus";
+      $nim = 2511500005;
+      $NIM = '2511500005';
+      $nama = "Melvyn";
+      $Nama = 'Melvyn';
+      $tempat = "Pangkalpinang";
       ?>
       <h2>Tentang Saya</h2>
       <p><strong>NIM:</strong>
@@ -122,13 +122,13 @@ endif;
         ?> &#128526;
       </p>
       <p><strong>Tempat Lahir:</strong> <?php echo $tempat; ?></p>
-      <p><strong>Tanggal Lahir:</strong> 1 Januari 2000</p>
-      <p><strong>Hobi:</strong> Memasak, coding, dan bermain musik &#127926;</p>
+      <p><strong>Tanggal Lahir:</strong> 6 Januari 2006</p>
+      <p><strong>Hobi:</strong> MELUKIS &#127926;</p>
       <p><strong>Pasangan:</strong> Belum ada &hearts;</p>
-      <p><strong>Pekerjaan:</strong> Dosen di ISB Atma Luhur &copy; 2025</p>
-      <p><strong>Nama Orang Tua:</strong> Bapak Setiawan dan Ibu Maria</p>
-      <p><strong>Nama Kakak:</strong> Antonius Setiawan</p>
-      <p><strong>Nama Adik:</strong> <?php echo $sespesan ?></p>
+      <p><strong>Pekerjaan:</strong> MAHASISWA &copy; 2025</p>
+      <p><strong>Nama Orang Tua:</strong> H,SH</p>
+      <p><strong>Nama Kakak:</strong> -</p>
+      <p><strong>Nama Adik: DERREN</strong> <?php echo $sespesan ?></p>
     </section>
 
     <section id="contact">
