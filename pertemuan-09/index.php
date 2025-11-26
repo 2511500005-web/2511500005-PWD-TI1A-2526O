@@ -149,12 +149,43 @@ $fields = [
     <section id="about">
       <h2>Tentang Saya</h2>
       <?php foreach ($fieldsConfig as $key => $metadata): ?>
-        <p>
-          <strong> <?= $metadata["label"] ?>: </strong>
-         <?= htmlspecialchars($biodata[$key] ?? "") ?>
-       <?=$metadata["suffix"] ?>
-      </p>
-      <?php endforeach; ?>
+      <?php
+$biodata = [
+    "nim"        => "a",
+    "nama"       => "b 😎",
+    "tempat"     => "c",
+    "tanggal"    => "d",
+    "hobi"       => "e 🦋",
+    "pasangan"   => "f ♥",
+    "pekerjaan"  => "g © 2025",
+    "ortu"       => "h",
+    "kakak"      => "i",
+    "adik"       => "j"
+];
+
+$fieldsConfig = [
+    "nim"        => ["label" => "NIM",               "suffix" => ""],
+    "nama"       => ["label" => "Nama Lengkap",      "suffix" => "😎"],
+    "tempat"     => ["label" => "Tempat Lahir",      "suffix" => ""],
+    "tanggal"    => ["label" => "Tanggal Lahir",     "suffix" => ""],
+    "hobi"       => ["label" => "Hobi",              "suffix" => "🦋"],
+    "pasangan"   => ["label" => "Pasangan",          "suffix" => "♥"],
+    "pekerjaan"  => ["label" => "Pekerjaan",         "suffix" => "© 2025"],
+    "ortu"       => ["label" => "Nama Orang Tua",    "suffix" => ""],
+    "kakak"      => ["label" => "Nama Kakak",        "suffix" => ""],
+    "adik"       => ["label" => "Nama Adik",         "suffix" => ""],
+];
+?>
+
+<h2>Tentang Saya</h2>
+<?php foreach ($fieldsConfig as $key => $metadata): ?>
+    <p>
+        <strong><?= htmlspecialchars($metadata["label"]) ?>:</strong>
+        <?= htmlspecialchars($biodata[$key] ?? "") ?>
+        <?= $metadata["suffix"] ?>
+    </p>
+<?php endforeach; ?>
+
     </section>
 
     <section id="contact">
