@@ -12,5 +12,5 @@
   <li>echo session ke nilai label section contact</li>
   <li>echo session ke nilai label section contact selesai</li>
   <li>mengubah baris 10-19 menjadi bentuk array associative</li>
-  <li>mengubah baris 23-32 menjadi bentuk $arrBiodata</li>
+  <li>mengubah baris 23-32 menjadi bentuk singkat</li>
 </ol>
