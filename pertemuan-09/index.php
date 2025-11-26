@@ -2,26 +2,27 @@
 session_start();
 
 $sesnama = "";
-if (isset($_SESSION["sesnama"])):
+if (isset($_SESSION["sesnama"])) {
   $sesnama = $_SESSION["sesnama"];
-else {
+} else {
   $sesnama = "";
 }
 
 $sesemail = "";
-if (isset($_SESSION["sesemail"])):
+if (isset($_SESSION["sesemail"])) {
   $sesemail = $_SESSION["sesemail"];
-else {
+} else {
   $sesemail = "";
 }
 
 $sespesan = "";
-if (isset($_SESSION["sespesan"])):
+if (isset($_SESSION["sespesan"])) {
   $sespesan = $_SESSION["sespesan"];
-else {
+} else {
   $sespesan = "";
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
