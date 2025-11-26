@@ -16,6 +16,7 @@
   <li>Hapus baris kode 19-67, sebagai gantinya ketikkan kode <?php sebelum section#about</li>
   <li>Tambahkan baris kode baru setelah baris Tentang Saya untuk menampilkan array menggunakan looping
 foreach</li>
+<li>Hapus baris 130-140, karena sudah diakomodir menggunakan perulangan foreach</li>
 
 
   NAMA MELVYN
