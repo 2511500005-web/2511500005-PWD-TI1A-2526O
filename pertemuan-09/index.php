@@ -16,25 +16,6 @@ if (isset($_SESSION["sespesan"])):
   $sespesan = $_SESSION["sespesan"];
 endif;
 
-<?php
-$biodata = $_SESSION["biodata"] ?? [];
-
-$fieldConfig = [
-    "nim"        => ["label" => "NIM",              "suffix" => ""],
-    "nama"       => ["label" => "Nama Lengkap",     "suffix" => "&#128526;"],
-    "tempat"     => ["label" => "Tempat Lahir",     "suffix" => ""],
-    "tanggal"    => ["label" => "Tanggal Lahir",    "suffix" => ""],
-    "hobi"       => ["label" => "Hobi",             "suffix" => "&#127926;"],
-    "pasangan"   => ["label" => "Nama Pasangan",    "suffix" => ""],
-    "ortu"       => ["label" => "Nama Orang Tua",   "suffix" => ""],
-    "pekerjaan"  => ["label" => "Pekerjaan",        "suffix" => "&#128296;"],
-    "kakak"      => ["label" => "Nama Kakak",       "suffix" => "&#127926;"],
-    "adik"       => ["label" => "Nama Adik",        "suffix" => "&#128526;"],
-    "lain"       => ["label" => "Lainnya",          "suffix" => "&copy; 2025"],
-];
-?>
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,50 +79,67 @@ $fieldConfig = [
           <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required>
         </label>
 
+        <label for="txtKerja"><span>Pekerjaan:</span>
+          <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan" required>
+        </label>
+
+        <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
+          <input type="text" id="txtNmOrtu" name="txtNmOrtu" placeholder="Masukkan Nama Orang Tua" required>
+        </label>
+
+        <label for="txtNmKakak"><span>Nama Kakak:</span>
+          <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama Kakak" required>
+        </label>
+
+        <label for="txtNmAdik"><span>Nama Adik:</span>
+          <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" required>
+        </label>
+
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
+
         <?php foreach ($fieldConfig as $key => $field): ?>
           <label for="txt<?php echo ucfirst($key); ?>"><span><?php echo $field["label"]; ?>:</span>
             <input type="text" id="txt<?php echo ucfirst($key); ?>" name="txt<?php echo ucfirst($key); ?>" placeholder="Masukkan <?php echo $field["label"]; ?>" required>
-    <?php
-    $biodata = $_SESSION["biodata"] ?? [];
+           </label>
+       
+           <?php endforeach; ?>
 
-$fieldConfig = [
-    "nim"        => ["label" => "NIM",              "suffix" => ""],
-    "nama"       => ["label" => "Nama Lengkap",     "suffix" => "&#128526;"],
-    "tempat"     => ["label" => "Tempat Lahir",     "suffix" => ""],
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
+
+      <?php
+      $txtNim = $_SESSION["biodata"]["nim"] ?? "";
+
     "tanggal"    => ["label" => "Tanggal Lahir",    "suffix" => ""],
     "hobi"       => ["label" => "Hobi",             "suffix" => "&#127926;"],
     "pasangan"   => ["label" => "Nama Pasangan",    "suffix" => ""],
-    "ortu"       => ["label" => "Nama Orang Tua",   "suffix" => ""],
+    "ortu"       => ["label" => "Nama Orang Tua",   "suffix => ""],
     "pekerjaan"  => ["label" => "Pekerjaan",        "suffix" => "&#128296;"],
     "kakak"      => ["label" => "Nama Kakak",       "suffix" => "&#127926;"],
     "adik"       => ["label" => "Nama Adik",        "suffix" => "&#128526;"],
     "lain"       => ["label" => "Lainnya",          "suffix" => "&copy; 2025"],
 ];
 ?>
-          </label>
-        <?php endforeach; ?>
 
-        <button type="submit">Simpan Biodata</button>
-        <button type="reset">Batal</button>
-      </form>
-
-      <h3>Data Biodata yang Disimpan:</h3>
       <?php
-      $txtNim = $biodata["nim"] ?? "";
-      $txtNmLengkap = $biodata["nama"] ?? "";
-      $txtT4Lhr = $biodata["tempat"] ?? "";
-      $txtTglLhr = $biodata["tanggal"] ?? "";
-      $txtHobi = $biodata["hobi"] ?? "";
-      $txtPasangan = $biodata["pasangan"] ?? "";
-      $txtKerja = $biodata["pekerjaan"] ?? "";
-      $txtNmOrtu = $biodata["ortu"] ?? "";
-      $txtNmKakak = $biodata["kakak"] ?? "";
-      $txtNmAdik = $biodata["adik"] ?? "";
+      $txtNmLengkap = $_SESSION["biodata"]["nama"] ?? "";
+      $txtT4Lhr = $_SESSION["biodata"]["tempat"] ?? "";
+      $txtTglLhr = $_SESSION["biodata"]["tanggal"] ?? "";
+      $txtHobi = $_SESSION["biodata"]["hobi"] ?? "";
+      $txtPasangan = $_SESSION["biodata"]["pasangan"] ?? "";
+      $txtKerja = $_SESSION["biodata"]["pekerjaan"] ?? "";
+      $txtNmOrtu = $_SESSION["biodata"]["ortu"] ?? "";
+      $txtNmKakak = $_SESSION["biodata"]["kakak"] ?? "";
+      $txtNmAdik = $_SESSION["biodata"]["adik"] ?? "";
       ?>
 
+    <section id="about">
+      <h2>Tentang Saya</h2>
       <p><strong>NIM:</strong> <?= $txtNim ?></p>
-      <p><str
-?>ong>Nama Lengkap:</strong> <?= $txtNmLengkap ?> &#128526;</p>
+      <p><strong>Nama Lengkap:</strong> <?= $txtNmLengkap ?> &#128526;</p>
       <p><strong>Tempat Lahir:</strong> <?= $txtT4Lhr ?></p>
       <p><strong>Tanggal Lahir:</strong> <?= $txtTglLhr ?></p>
       <p><strong>Hobi:</strong> <?= $txtHobi ?> &#127926;</p>
