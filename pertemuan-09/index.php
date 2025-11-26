@@ -215,7 +215,7 @@ $fieldsConfig = [
   </main>
 
   <footer>
-    <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>
+    <p>&copy; 2025 MELLVYN [2511500005]</p>
   </footer>
 
   <script src="script.js"></script>
