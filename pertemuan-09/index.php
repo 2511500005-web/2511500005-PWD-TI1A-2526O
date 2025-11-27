@@ -165,15 +165,15 @@ $fields = [
       <h2>Tentang Saya</h2>
       <?php
 $fieldsConfig = [
-    "nama"      => ["label" => "Nama Lengkap",      "suffix" => "😎"],
-    "tempat"    => ["label" => "Tempat Lahir",      "suffix" => ""],
-    "tanggal"   => ["label" => "Tanggal Lahir",     "suffix" => ""],
-    "hobi"      => ["label" => "Hobi",              "suffix" => "🦋"],
-    "pasangan"  => ["label" => "Pasangan",          "suffix" => "♥"],
-    "pekerjaan" => ["label" => "Pekerjaan",         "suffix" => "© 2025"],
-    "ortu"      => ["label" => "Nama Orang Tua",    "suffix" => ""],
-    "kakak"     => ["label" => "Nama Kakak",        "suffix" => ""],
-    "adik"      => ["label" => "Nama Adik",         "suffix" => ""],
+    "nama"      => ["label" => "Nama Lengkap",      "suffix" => "MELVYN😎"],
+    "tempat"    => ["label" => "Tempat Lahir",      "suffix" => "B"],
+    "tanggal"   => ["label" => "Tanggal Lahir",     "suffix" => "C"],
+    "hobi"      => ["label" => "Hobi",              "suffix" => "D🦋"],
+    "pasangan"  => ["label" => "Pasangan",          "suffix" => "E♥"],
+    "pekerjaan" => ["label" => "Pekerjaan",         "suffix" => "F © 2025"],
+    "ortu"      => ["label" => "Nama Orang Tua",    "suffix" => "G"],
+    "kakak"     => ["label" => "Nama Kakak",        "suffix" => "H"],
+    "adik"      => ["label" => "Nama Adik",         "suffix" => "I"],
    ];
    ?>
 
