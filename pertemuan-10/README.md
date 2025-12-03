@@ -6,3 +6,4 @@ NIM: 2511500005
 <li>Database db_pwd2025</li>
 <li>create table tbl_tamu query database db_pwd2025</li>
 <li>kode php require koneksi.php</li>
+<li>tabel read.php</li>
