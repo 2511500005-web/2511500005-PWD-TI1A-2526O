@@ -4,9 +4,9 @@ $user = "root";
 $pass = "";
 $db = "db_pwd2025";
 
-$koneksi = mysqli_connect($host, $user, $pass, $db);
+$conn = mysqli_connect($host, $user, $pass, $db);
 
-if (!$koneksi) {
+if (!$conn) {
     die("Koneksi gagal: " . mysqli_connect_error());
 }
 ?>
