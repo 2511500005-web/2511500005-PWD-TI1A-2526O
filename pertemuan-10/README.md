@@ -5,3 +5,4 @@ NIM: 2511500005
 <li>koneksi.php MySQL Improved</li>
 <li>Database db_pwd2025</li>
 <li>create table tbl_tamu query database db_pwd2025</li>
+<li>kode php require koneksi.php</li>
