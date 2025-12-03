@@ -7,3 +7,4 @@ NIM: 2511500005
 <li>create table tbl_tamu query database db_pwd2025</li>
 <li>kode php require koneksi.php</li>
 <li>tabel read.php</li>
+<li>membuat duplikat read.php menjadi read_inc.php dan memodifikasi isi read_inc.php</li>
