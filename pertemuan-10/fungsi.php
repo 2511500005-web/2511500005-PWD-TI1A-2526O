@@ -26,3 +26,9 @@ function tampilkanBiodata($conf, $arr)
   }
   return $html;
 }
+
+function redirect_ke($url)
+{
+  header("Location: " . $url);
+  exit();
+}
