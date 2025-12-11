@@ -10,3 +10,4 @@ NIM: 2511500005
 <li>membuat duplikat read.php menjadi read_inc.php dan memodifikasi isi read_inc.php</li>
 <li>memodifikasi baris 146 di index.php</li>
 <li>hapus baris 133-141</li>
+Update fungsi.php untuk helper redirect sederhana (pola PRG).

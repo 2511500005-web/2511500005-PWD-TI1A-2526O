@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 03, 2025 at 07:47 AM
+-- Generation Time: Dec 10, 2025 at 09:59 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tbl_tamu` (
+  `cnumber` int(11) NOT NULL,
   `cid` int(11) NOT NULL,
   `cnama` varchar(100) DEFAULT NULL,
   `cemail` varchar(100) DEFAULT NULL,
@@ -38,11 +39,11 @@ CREATE TABLE `tbl_tamu` (
 -- Dumping data for table `tbl_tamu`
 --
 
-INSERT INTO `tbl_tamu` (`cid`, `cnama`, `cemail`, `cpesan`) VALUES
-(1, 'melvyn', '2511500005@mahasiswa.atmaluhur.ac.id', 'XXXXXX'),
-(2, NULL, NULL, NULL),
-(3, 'galen', 'galen2gmail.com', 'XXXXXXX'),
-(4, 'maria', 'maria333gmail.com', 'XXXXX');
+INSERT INTO `tbl_tamu` (`cnumber`, `cid`, `cnama`, `cemail`, `cpesan`) VALUES
+(1, 1, 'melvyn', '2511500005@mahasiswa.atmaluhur.ac.id', 'XXXXXX'),
+(2, 2, 'MAMAMAHINDA', 'MAMA2GMAIL.COM', 'HALO'),
+(3, 3, 'galen', 'galen2gmail.com', 'XXXXXXX'),
+(4, 4, 'maria', 'maria333gmail.com', 'XXXXX');
 
 --
 -- Indexes for dumped tables
