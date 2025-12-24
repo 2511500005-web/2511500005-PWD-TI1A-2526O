@@ -11,6 +11,7 @@ if (!$q) {
 <table border="1" cellpadding="8" cellspacing="0">
 <tr>
     <th>ID</th>
+    <th>No</th
     <th>Nama</th>
     <th>Email</th>
     <th>Pesan</th>
@@ -19,6 +20,7 @@ if (!$q) {
 <?php while ($row = mysqli_fetch_assoc($q)): ?>
 <tr>
     <td><?= $row['cid']; ?></td>
+    <td><?= $row['cnumber']; ?></td>
     <td><?= htmlspecialchars($row['cnama']); ?></td>
     <td><?= htmlspecialchars($row['cemail']); ?></td>
     <td><?= nl2br(htmlspecialchars($row['cpesan'])); ?></td>

@@ -125,6 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <thead>
         <tr>
           <th>No</th>
+          <th>Aksi</th>
           <th>ID</th>
           <th>Nama</th>
           <th>Email</th>
@@ -139,6 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>
                     <td>{$no}</td>
+                    <td>".htmlspecialchars($row['cid'])."</td>
                     <td>".htmlspecialchars($row['cid'])."</td>
                     <td>".htmlspecialchars($row['cnama'])."</td>
                     <td>".htmlspecialchars($row['cemail'])."</td>
