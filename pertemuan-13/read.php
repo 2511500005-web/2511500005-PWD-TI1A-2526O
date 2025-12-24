@@ -46,6 +46,8 @@
     <tr>
       <td><?= $i++ ?></td>
       <td><a href="edit.php?cid=<?= (int)$row['cid']; ?>">Edit</a></td>
+      <td><a href="proses_delete.php?cid=<?= (int)$row['cid']; ?>" 
+        onclick="return confirm('Yakin hapus data ini?');">Hapus</a></td>
       <td><?= $row['cid']; ?></td>
       <td><?= htmlspecialchars($row['cnama']); ?></td>
       <td><?= htmlspecialchars($row['cemail']); ?></td>
