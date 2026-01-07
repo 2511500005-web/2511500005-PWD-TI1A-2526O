@@ -1,12 +1,8 @@
-# pertemuan-07
-
-MIM 2511500005<BR>
-NAMA - MELVYN MAHINDA HADI<BR>
-<OL>
-<LI>COPY SELURUH FILE DARI E-LEARNING UNTUK LATIHAN PERTEMUAN KE-7</LI>
-<LI>'COPY DAN RENAME INDEX.PHP MENJADI GET.PHP, KEMUDIAN BUAT FILE BARU BERNAMA GET_PROSES.PHP'</LI>
-<li>isi get_proses.php</li>
-<li>session di get_proses.php</li>
-<li>menampilkan session dari get_proses.php ke get.php</li>
-<li>redirect dari get_proses.php ke get.php</li>
-<li>copy paste get.php dan get_proses.php menjadi post.php dan post_proses.php</li>
+hari ini, materi terakhir untuk PWD, rabu 24 des 2025<br>
+nama saya melvyn hadi<br>
+<ol>
+<br>import file sql localhost ke phpmyadmin pert-13<br>
+<br>"menambah link delete di file read.php untuk ke file proses_delete.php"<br>
+<br>"copy isi file proses_update.php ke proses_delete.php",<bbr>
+<br>"menyesuaikan isi kode proses_delete.php"<br>
+"nambahkan parameter cid untuk link delete di read.php"</lo>

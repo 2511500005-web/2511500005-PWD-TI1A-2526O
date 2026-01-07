@@ -1,58 +1,79 @@
 <?php
-  session_start();
-  require 'koneksi.php';
-  require 'fungsi.php';
-
-  $sql = "SELECT * FROM tbl_tamu ORDER BY cid DESC";
-  $q = mysqli_query($conn, $sql);
-  if (!$q) {
-    die("Query error: " . mysqli_error($conn));
-  }
+session_start();
+require 'koneksi.php';
+require 'fungsi.php';
 ?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Tamu</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    table { border-collapse: collapse; width: 100%; margin-top: 15px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f0f0f0; }
+    .flash { padding: 10px; margin-bottom: 10px; border-radius: 6px; }
+    .sukses { background: #d4edda; color: #155724; }
+    .error { background: #f8d7da; color: #721c24; }
+  </style>
+</head>
+<body>
+
+<h2>📋 Daftar Tamu</h2>
 
 <?php
-  $flash_sukses = $_SESSION['flash_sukses'] ?? ''; #jika query sukses
-  $flash_error  = $_SESSION['flash_error'] ?? ''; #jika ada error
-  #bersihkan session ini
-  unset($_SESSION['flash_sukses'], $_SESSION['flash_error']); 
+// tampilkan pesan flash
+if (isset($_SESSION['flash_sukses'])) {
+    echo "<div class='flash sukses'>".$_SESSION['flash_sukses']."</div>";
+    unset($_SESSION['flash_sukses']);
+}
+if (isset($_SESSION['flash_error'])) {
+    echo "<div class='flash error'>".$_SESSION['flash_error']."</div>";
+    unset($_SESSION['flash_error']);
+}
 ?>
 
-<?php if (!empty($flash_sukses)): ?>
-        <div style="padding:10px; margin-bottom:10px; 
-          background:#d4edda; color:#155724; border-radius:6px;">
-          <?= $flash_sukses; ?>
-        </div>
-<?php endif; ?>
-
-<?php if (!empty($flash_error)): ?>
-        <div style="padding:10px; margin-bottom:10px; 
-          background:#f8d7da; color:#721c24; border-radius:6px;">
-          <?= $flash_error; ?>
-        </div>
-<?php endif; ?>
-
-<table border="1" cellpadding="8" cellspacing="0">
-  <tr>
-    <th>No</th>
-    <th>Aksi</th>
-    <th>ID</th>
-    <th>Nama</th>
-    <th>Email</th>
-    <th>Pesan</th>
-    <th>Created At</th>
-  </tr>
-  <?php $i = 1; ?>
-  <?php while ($row = mysqli_fetch_assoc($q)): ?>
+<table>
+  <thead>
     <tr>
-      <td><?= $i++ ?></td>
-      <td><a href="edit.php?cid=<?= (int)$row['cid']; ?>">Edit</a></td>
-      <td><a href="proses_delete.php?cid=<?= (int)$row['cid']; ?>" 
-        onclick="return confirm('Yakin hapus data ini?');">Hapus</a></td>
-      <td><?= $row['cid']; ?></td>
-      <td><?= htmlspecialchars($row['cnama']); ?></td>
-      <td><?= htmlspecialchars($row['cemail']); ?></td>
-      <td><?= nl2br(htmlspecialchars($row['cpesan'])); ?></td>
-      <td><?= formatTanggal(htmlspecialchars($row['dcreated_at'])); ?></td>
+      <th>No</th>
+      <th>Aksi</th>
+      <th>CID</th>
+      <th>Nama</th>
+      <th>Email</th>
+      <th>Pesan</th>
+      <th>Created At</th>
     </tr>
-  <?php endwhile; ?>
+  </thead>
+  <tbody>
+    <?php
+    $sql = "SELECT cid, cnama, cemail, cpesan, dcreated_at FROM tbl_tamu ORDER BY cid DESC";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $no = 1;
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>".$no++."</td>";
+            echo "<td>
+                    <a href='edit.php?cid=".$row['cid']."'>Edit</a> | 
+                    <a href='proses_delete.php?cid=".$row['cid']."' onclick=\"return confirm('Yakin ingin menghapus data ini?')\">Hapus</a>
+                  </td>";
+            echo "<td>".$row['cid']."</td>";
+            echo "<td>".htmlspecialchars($row['cnama'])."</td>";
+            echo "<td>".htmlspecialchars($row['cemail'])."</td>";
+            echo "<td>".nl2br(htmlspecialchars($row['cpesan']))."</td>";
+            echo "<td>".htmlspecialchars($row['dcreated_at'])."</td>";
+            echo "</tr>";
+        }
+    } else {
+        echo "<tr><td colspan='7'>⚠️ Belum ada data tamu.</td></tr>";
+    }
+    ?>
+  </tbody>
 </table>
+
+</body>
+</html>

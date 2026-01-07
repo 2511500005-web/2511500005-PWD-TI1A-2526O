@@ -1,30 +1,7 @@
 <?php
 session_start();
-
-require_once __DIR__ . "/fungsi.php";
-
-$sesnama = "";
-if (isset($_SESSION["sesnama"])) {
-  $sesnama = $_SESSION["sesnama"];
-} else {
-  $sesnama = "";
-}
-
-$sesemail = "";
-if (isset($_SESSION["sesemail"])) {
-  $sesemail = $_SESSION["sesemail"];
-} else {
-  $sesemail = "";
-}
-
-$sespesan = "";
-if (isset($_SESSION["sespesan"])) {
-  $sespesan = $_SESSION["sespesan"];
-} else {
-  $sespesan = "";
-}
+require_once __DIR__ . '/fungsi.php';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,114 +85,92 @@ if (isset($_SESSION["sespesan"])) {
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>
+    </section>
 
-       <?php
-$fieldsConfig = [
-    "nama"   => ["label" => "Nama Lengkap"],
-    "email"  => ["label" => "Email"],
-    "pesan"  => ["label" => "Pesan"],
-];
-?>
-<?php foreach ($fieldsConfig as $key => $field): ?>
-    <label for="txt<?php echo ucfirst($key); ?>">
-        <span><?php echo $field["label"]; ?>:</span>
-        <input type="text"
-               id="txt<?php echo ucfirst($key); ?>"
-               name="txt<?php echo ucfirst($key); ?>"
-               placeholder="Masukkan <?php echo $field["label"]; ?>"
-               required>
-</label>
-<?php endforeach; ?>
+    <?php
+    $biodata = $_SESSION["biodata"] ?? [];
 
-       
-          
-
-        <button type="submit">Kirim</button>
-        <button type="reset">Batal</button>
-      </form>
-      <?php
-      $txtNim = $_SESSION["biodata"]["nim"] ?? "";
-
-$fields = [
-    "tanggal"    => ["label" => "Tanggal Lahir",    "suffix" => ""],
-    "hobi"       => ["label" => "Hobi",             "suffix" => "&#127926;"],
-    "pasangan"   => ["label" => "Nama Pasangan",    "suffix" => ""],
-    "ortu"       => ["label" => "Nama Orang Tua",   "suffix" => ""],
-    "pekerjaan"  => ["label" => "Pekerjaan",        "suffix" => "&#128296;"],
-    "kakak"      => ["label" => "Nama Kakak",       "suffix" => "&#127926;"],
-    "adik"       => ["label" => "Nama Adik",        "suffix" => "&#128526;"],
-    "lain"       => ["label" => "Lainnya",          "suffix" => "&copy; 2025"],
-];
-?>
-
-
-      <?php
-      $txtNmLengkap = $_SESSION["biodata"]["nama"] ?? "";
-      $txtT4Lhr = $_SESSION["biodata"]["tempat"] ?? "";
-      $txtTglLhr = $_SESSION["biodata"]["tanggal"] ?? "";
-      $txtHobi = $_SESSION["biodata"]["hobi"] ?? "";
-      $txtPasangan = $_SESSION["biodata"]["pasangan"] ?? "";
-      $txtKerja = $_SESSION["biodata"]["pekerjaan"] ?? "";
-      $txtNmOrtu = $_SESSION["biodata"]["ortu"] ?? "";
-      $txtNmKakak = $_SESSION["biodata"]["kakak"] ?? "";
-      $txtNmAdik = $_SESSION["biodata"]["adik"] ?? "";
-      ?>
+    $fieldConfig = [
+      "nim" => ["label" => "NIM:", "suffix" => ""],
+      "nama" => ["label" => "Nama Lengkap:", "suffix" => " &#128526;"],
+      "tempat" => ["label" => "Tempat Lahir:", "suffix" => ""],
+      "tanggal" => ["label" => "Tanggal Lahir:", "suffix" => ""],
+      "hobi" => ["label" => "Hobi:", "suffix" => " &#127926;"],
+      "pasangan" => ["label" => "Pasangan:", "suffix" => " &hearts;"],
+      "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => " &copy; 2025"],
+      "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
+      "kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
+      "adik" => ["label" => "Nama Adik:", "suffix" => ""],
+    ];
+    ?>
 
     <section id="about">
       <h2>Tentang Saya</h2>
-      <?php
-$fieldsConfig = [
-    "nama"      => ["label" => "Nama Lengkap",      "suffix" => "MELVYN😎"],
-    "tempat"    => ["label" => "Tempat Lahir",      "suffix" => "B"],
-    "tanggal"   => ["label" => "Tanggal Lahir",     "suffix" => "C"],
-    "hobi"      => ["label" => "Hobi",              "suffix" => "D🦋"],
-    "pasangan"  => ["label" => "Pasangan",          "suffix" => "E♥"],
-    "pekerjaan" => ["label" => "Pekerjaan",         "suffix" => "F © 2025"],
-    "ortu"      => ["label" => "Nama Orang Tua",    "suffix" => "G"],
-    "kakak"     => ["label" => "Nama Kakak",        "suffix" => "H"],
-    "adik"      => ["label" => "Nama Adik",         "suffix" => "I"],
-   ];
-   ?>
-
-     <?=tampilkanBiodata($fieldsConfig, $_SESSION["biodata"] ?? []) ?>
+      <?= tampilkanBiodata($fieldConfig, $biodata) ?>
     </section>
+
+    <?php
+    $flash_sukses = $_SESSION['flash_sukses'] ?? ''; #jika query sukses
+    $flash_error  = $_SESSION['flash_error'] ?? ''; #jika ada error
+    $old          = $_SESSION['old'] ?? []; #untuk nilai lama form
+
+    unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']); #bersihkan 3 session ini
+    ?>
 
     <section id="contact">
       <h2>Kontak Kami</h2>
+
+      <?php if (!empty($flash_sukses)): ?>
+        <div style="padding:10px; margin-bottom:10px; background:#d4edda; color:#155724; border-radius:6px;">
+          <?= $flash_sukses; ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if (!empty($flash_error)): ?>
+        <div style="padding:10px; margin-bottom:10px; background:#f8d7da; color:#721c24; border-radius:6px;">
+          <?= $flash_error; ?>
+        </div>
+      <?php endif; ?>
+
       <form action="proses.php" method="POST">
 
         <label for="txtNama"><span>Nama:</span>
-          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
+          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama"
+            required autocomplete="name"
+            value="<?= isset($old['nama']) ? htmlspecialchars($old['nama']) : '' ?>">
         </label>
 
         <label for="txtEmail"><span>Email:</span>
-          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
+          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email"
+            required autocomplete="email"
+            value="<?= isset($old['email']) ? htmlspecialchars($old['email']) : '' ?>">
         </label>
 
         <label for="txtPesan"><span>Pesan Anda:</span>
-          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
+          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..."
+            required><?= isset($old['pesan']) ? htmlspecialchars($old['pesan']) : '' ?></textarea>
           <small id="charCount">0/200 karakter</small>
         </label>
 
-        <button type="submit">Kirim</button>
-        <button type="reset">Batal</button>
+        <label for="txtCaptcha"><span>Captcha 2 + 3 = ?</span>
+          <input type="number" id="txtCaptcha" name="txtCaptcha" placeholder="Jawab Pertanyaan..."
+            required
+            value="<?= isset($old['captcha']) ? htmlspecialchars($old['captcha']) : '' ?>">
+        </label>
+
+        <button type=" submit">Kirim</button>
+          <button type="reset">Batal</button>
       </form>
 
-      <?php if (!empty($sesnama)): ?>
-        <br><hr>
-        <h2>Yang menghubungi kami</h2>
-        <p><strong>Nama :</strong> <?php echo $sesnama ?></p>
-        <p><strong>Email :</strong> <?php echo $sesemail ?></p>
-        <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
-      <?php endif; ?>
-
-
-
+      <br>
+      <hr>
+      <h2>Yang menghubungi kami</h2>
+      <?php include 'read_inc.php'; ?>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 MELLVYN [2511500005]</p>
+    <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>
   </footer>
 
   <script src="script.js"></script>

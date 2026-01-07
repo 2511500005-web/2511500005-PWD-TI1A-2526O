@@ -1,159 +1,179 @@
 <?php
 session_start();
-include "koneksi.php";
-
-function bersihkan($data) {
-  return htmlspecialchars(trim($data));
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $nama  = bersihkan($_POST["txtNama"] ?? "");
-  $email = bersihkan($_POST["txtEmail"] ?? "");
-  $pesan = bersihkan($_POST["txtPesan"] ?? "");
-
-  $sql = "INSERT INTO tbl_tamu (cnama, cemail, cpesan) VALUES (?, ?, ?)";
-  $stmt = mysqli_prepare($conn, $sql);
-
-  if ($stmt) {
-    mysqli_stmt_bind_param($stmt, "sss", $nama, $email, $pesan);
-    if (mysqli_stmt_execute($stmt)) {
-      $_SESSION["flash_sukses"] = "Terima kasih, data Anda sudah tersimpan.";
-    } else {
-      $_SESSION["flash_error"] = "Data gagal disimpan. Silakan coba lagi.";
-    }
-    mysqli_stmt_close($stmt);
-  } else {
-    $_SESSION["flash_error"] = "Terjadi kesalahan sistem (prepare gagal).";
-  }
-
-  header("Location: index.php#contact");
-  exit;
-}
+require_once __DIR__ . '/fungsi.php';
 ?>
+
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Halaman Biodata & Kontak</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header { background-color: #003366; color: white; padding: 20px; text-align: center; }
-    nav { background-color: #eee; padding: 10px; text-align: center; }
-    nav a { margin: 0 15px; text-decoration: none; color: #003366; font-weight: bold; }
-    section { padding: 20px; }
-    h2 { color: #003366; }
-    form { max-width: 400px; margin-top: 20px; }
-    label { display: block; margin-top: 10px; }
-    input, textarea { width: 100%; padding: 8px; margin-top: 5px; }
-    button { margin-top: 15px; padding: 10px 20px; background-color: #003366; color: white; border: none; }
-    .flash { margin-top: 15px; padding: 10px; border-radius: 5px; }
-    .flash.sukses { background-color: #d4edda; color: #155724; }
-    .flash.error { background-color: #f8d7da; color: #721c24; }
-    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #003366; color: white; }
-    .biodata, .kontak-box { margin-top: 30px; background-color: #f9f9f9; padding: 15px; border-radius: 5px; }
-    footer { background-color: #003366; color: white; text-align: center; padding: 15px; margin-top: 30px; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judul Halaman</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <header>
+    <h1>Ini Header</h1>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+      &#9776;
+    </button>
+    <nav>
+      <ul>
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <h1>Ini Header</h1>
-</header>
+  <main>
+    <section id="home">
+      <h2>Selamat Datang</h2>
+      <?php
+      echo "halo dunia!<br>";
+      echo "nama saya hadi";
+      ?>
+      <p>Ini contoh paragraf HTML.</p>
+    </section>
 
-<nav>
-  <a href="#home">Beranda</a>
-  <a href="#about">Tentang</a>
-  <a href="#contact">Kontak</a>
-</nav>
+    <section id="biodata">
+      <h2>Biodata Sederhana Mahasiswa</h2>
+      <form action="proses.php" method="POST">
 
-<section id="home">
-  <h2>Selamat Datang</h2>
-  <p>Halo dunia!<br>Nama saya Hadi</p>
-  <p>Ini contoh paragraf HTML.</p>
-</section>
+        <label for="txtNim"><span>NIM:</span>
+          <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required>
+        </label>
 
-<section id="biodata">
-  <h2>📋 Biodata Sederhana Mahasiswa</h2>
-  <div class="biodata">
-    <p>🆔 NIM: 2511500005</p>
-    <p>👤 Nama Lengkap: MELVYN 😎</p>
-    <p>📍 Tempat Lahir: B</p>
-    <p>📅 Tanggal Lahir: C</p>
-    <p>🦋 Hobi: D</p>
-    <p>❤️ Pasangan: E</p>
-    <p>💼 Pekerjaan: F © 2025</p>
-    <p>👪 Nama Orang Tua: G</p>
-    <p>👧 Nama Kakak: H</p>
-    <p>👶 Nama Adik: I</p>
-  </div>
-</section>
+        <label for="txtNmLengkap"><span>Nama Lengkap:</span>
+          <input type="text" id="txtNmLengkap" name="txtNmLengkap" placeholder="Masukkan Nama Lengkap" required>
+        </label>
 
-<section id="contact">
-  <h2>📬 Kontak Kami</h2>
-  <div class="kontak-box">
+        <label for="txtT4Lhr"><span>Tempat Lahir:</span>
+          <input type="text" id="txtT4Lhr" name="txtT4Lhr" placeholder="Masukkan Tempat Lahir" required>
+        </label>
 
-    <?php if (isset($_SESSION['flash_sukses'])): ?>
-      <div class="flash sukses"><?= $_SESSION['flash_sukses']; unset($_SESSION['flash_sukses']); ?></div>
-    <?php endif; ?>
-    <?php if (isset($_SESSION['flash_error'])): ?>
-      <div class="flash error"><?= $_SESSION['flash_error']; unset($_SESSION['flash_error']); ?></div>
-    <?php endif; ?>
+        <label for="txtTglLhr"><span>Tanggal Lahir:</span>
+          <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" required>
+        </label>
 
-    <form method="POST">
-      <label>Nama:</label>
-      <input type="text" name="txtNama" required>
+        <label for="txtHobi"><span>Hobi:</span>
+          <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" required>
+        </label>
 
-      <label>Email:</label>
-      <input type="email" name="txtEmail" required>
+        <label for="txtPasangan"><span>Pasangan:</span>
+          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required>
+        </label>
 
-      <label>Pesan Anda:</label>
-      <textarea name="txtPesan" rows="4" required></textarea>
+        <label for="txtKerja"><span>Pekerjaan:</span>
+          <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan" required>
+        </label>
 
-      <button type="submit">Kirim</button>
-      <button type="reset">Batal</button>
-    </form>
+        <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
+          <input type="text" id="txtNmOrtu" name="txtNmOrtu" placeholder="Masukkan Nama Orang Tua" required>
+        </label>
 
-    <h3>📋 Daftar Tamu</h3>
-    <p>Berikut adalah daftar pesan yang masuk:</p>
+        <label for="txtNmKakak"><span>Nama Kakak:</span>
+          <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama Kakak" required>
+        </label>
 
-    <table>
-      <thead>
-        <tr>
-          <th>No</th>
-          <th>ID</th>
-          <th>Nama</th>
-          <th>Email</th>
-          <th>Pesan</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-        $result = mysqli_query($conn, "SELECT cid, cnama, cemail, cpesan FROM tbl_tamu ORDER BY cid DESC");
-        if ($result && mysqli_num_rows($result) > 0) {
-          $no = 1;
-          while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr>
-                    <td>{$no}</td>
-                    <td>".htmlspecialchars($row['cid'])."</td>
-                    <td>".htmlspecialchars($row['cnama'])."</td>
-                    <td>".htmlspecialchars($row['cemail'])."</td>
-                    <td>".htmlspecialchars($row['cpesan'])."</td>
-                  </tr>";
-            $no++;
-          }
-        }
-        ?>
-      </tbody>
-    </table>
+        <label for="txtNmAdik"><span>Nama Adik:</span>
+          <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" required>
+        </label>
 
-  </div>
-</section>
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
+    </section>
 
-<footer>
-  <p>&copy; 2025 MELLYVN [2511500005]</p>
-</footer>
+    <?php
+    $biodata = $_SESSION["biodata"] ?? [];
 
+    $fieldConfig = [
+      "nim" => ["label" => "NIM:", "suffix" => ""],
+      "nama" => ["label" => "Nama Lengkap:", "suffix" => " &#128526;"],
+      "tempat" => ["label" => "Tempat Lahir:", "suffix" => ""],
+      "tanggal" => ["label" => "Tanggal Lahir:", "suffix" => ""],
+      "hobi" => ["label" => "Hobi:", "suffix" => " &#127926;"],
+      "pasangan" => ["label" => "Pasangan:", "suffix" => " &hearts;"],
+      "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => " &copy; 2025"],
+      "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
+      "kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
+      "adik" => ["label" => "Nama Adik:", "suffix" => ""],
+    ];
+    ?>
+
+    <section id="about">
+      <h2>Tentang Saya</h2>
+      <?= tampilkanBiodata($fieldConfig, $biodata) ?>
+    </section>
+
+    <?php
+    $flash_sukses = $_SESSION['flash_sukses'] ?? ''; #jika query sukses
+    $flash_error  = $_SESSION['flash_error'] ?? ''; #jika ada error
+    $old          = $_SESSION['old'] ?? []; #untuk nilai lama form
+
+    unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']); #bersihkan 3 session ini
+    ?>
+
+    <section id="contact">
+      <h2>Kontak Kami</h2>
+
+      <?php if (!empty($flash_sukses)): ?>
+        <div style="padding:10px; margin-bottom:10px; background:#d4edda; color:#155724; border-radius:6px;">
+          <?= $flash_sukses; ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if (!empty($flash_error)): ?>
+        <div style="padding:10px; margin-bottom:10px; background:#f8d7da; color:#721c24; border-radius:6px;">
+          <?= $flash_error; ?>
+        </div>
+      <?php endif; ?>
+
+      <form action="proses.php" method="POST">
+
+        <label for="txtNama"><span>Nama:</span>
+          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama"
+            required autocomplete="name"
+            value="<?= isset($old['nama']) ? htmlspecialchars($old['nama']) : '' ?>">
+        </label>
+
+        <label for="txtEmail"><span>Email:</span>
+          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email"
+            required autocomplete="email"
+            value="<?= isset($old['email']) ? htmlspecialchars($old['email']) : '' ?>">
+        </label>
+
+        <label for="txtPesan"><span>Pesan Anda:</span>
+          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..."
+            required><?= isset($old['pesan']) ? htmlspecialchars($old['pesan']) : '' ?></textarea>
+          <small id="charCount">0/200 karakter</small>
+        </label>
+
+        <label for="txtCaptcha"><span>Captcha 2 + 3 = ?</span>
+          <input type="number" id="txtCaptcha" name="txtCaptcha" placeholder="Jawab Pertanyaan..."
+            required
+            value="<?= isset($old['captcha']) ? htmlspecialchars($old['captcha']) : '' ?>">
+        </label>
+
+        <button type=" submit">Kirim</button>
+          <button type="reset">Batal</button>
+      </form>
+
+      <br>
+      <hr>
+      <h2>Yang menghubungi kami</h2>
+      <?php include 'read_inc.php'; ?>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

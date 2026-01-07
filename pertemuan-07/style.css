@@ -51,7 +51,8 @@ header li a:active {
 
 #home:target~header nav a[href="#home"],
 #about:target~header nav a[href="#about"],
-#contact:target~header nav a[href="#contact"] {
+#contact:target~header nav a[href="#contact"],
+#biodata:target~header nav a[href="#biodata"] {
   background: #fff;
   color: #003366;
   font-weight: bold;
@@ -61,7 +62,8 @@ header li a:active {
 
 #home,
 #about,
-#contact {
+#contact,
+#biodata {
   background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
@@ -72,7 +74,8 @@ header li a:active {
 
 #home h2,
 #about h2,
-#contact h2 {
+#contact h2,
+#biodata h2 {
   color: #003366;
   border-bottom: 2px solid #003366;
   padding-bottom: 6px;
@@ -85,7 +88,9 @@ header li a:active {
 }
 
 #about p,
-#contact label {
+#contact p,
+#contact label,
+#biodata label {
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
@@ -95,7 +100,9 @@ header li a:active {
 }
 
 #about strong,
-#contact label>span {
+#contact strong,
+#contact label>span,
+#biodata label>span {
   min-width: 180px;
   color: #003366;
   font-weight: 600;
@@ -105,7 +112,8 @@ header li a:active {
 }
 
 #contact input,
-#contact textarea {
+#contact textarea,
+#biodata input {
   flex: 1;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -116,7 +124,8 @@ header li a:active {
   box-sizing: border-box;
 }
 
-#contact button {
+#contact button,
+#biodata button {
   margin-top: 10px;
   display: inline-block;
   padding: 10px 24px;
@@ -128,25 +137,29 @@ header li a:active {
   margin-right: 8px;
 }
 
-#contact button[type="submit"] {
+#contact button[type="submit"],
+#biodata button[type="submit"] {
   background-color: #003366;
   color: #fff;
   font-weight: 600;
 }
 
-#contact button[type="reset"] {
+#contact button[type="reset"],
+#biodata button[type="reset"] {
   background-color: #b4b4b4;
   color: #272727;
   font-weight: 500;
 }
 
-#contact button[type="submit"]:hover {
+#contact button[type="submit"]:hover,
+#biodata button[type="submit"]:hover {
   background-color: #0379ee;
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-#contact button[type="reset"]:hover {
+#contact button[type="reset"]:hover,
+#biodata button[type="reset"]:hover {
   background-color: #cccccc;
   transform: translateY(-1px);
 }
@@ -216,21 +229,27 @@ footer {
   }
 
   #about p,
-  #contact label {
+  #contact p,
+  #contact label,
+  #biodata label {
     flex-direction: column;
     align-items: flex-start;
   }
 
   #about strong,
-  #contact label>span {
+  #contact strong,
+  #contact label>span,
+  #biodata label>span {
     text-align: left;
     padding-right: 0;
     margin-bottom: 2px;
   }
 
   #contact input,
+  #biodata input,
   #contact textarea,
-  #contact button {
+  #contact button,
+  #biodata button {
     width: 100%;
   }
 }

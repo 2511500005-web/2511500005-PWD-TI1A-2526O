@@ -1,19 +1,8 @@
-# pertemuan-03
-NIM : 2511500005
-Nama : MELVYN MAHINDA HADI
-
-Hari ini, Rabu 08-10-25, saya belajar:
-<li>menggunakan file emmet.html pertemuan-02 untuk file index.html pertemuan-03</li>
-  <li>membuat struktur form untuk section contact</li>
-  <li>membuat styling untuk selector ID #about</li>
-  <li>membuat styling untuk selector ID #about elemen h2</li>
-  <li>membuat styling untuk selector ID #about elemen p</li>
-  <li>membuat styling untuk selector ID #about elemen strong</li>
-  <li>membuat styling untuk selector ID #about mode responsif (mobile)</li>
-  <li>membuat styling untuk selector ID section#contact groups selector</li>
-  <li>membuat styling untuk selector ID section#contact groups selector h2</li>
-  <li>section#contact upgrade struktur form</li>
-   <li>section#contact styling label</li>
-  <li>section#contact upgrade struktur form</li>
-  <li>section#contact styling label>span</li> 
-</ol>
+hari ini, materi terakhir untuk PWD, rabu 24 des 2025<br>
+nama saya melvyn hadi<br>
+<ol>
+<br>import file sql localhost ke phpmyadmin pert-13<br>
+<br>"menambah link delete di file read.php untuk ke file proses_delete.php"<br>
+<br>"copy isi file proses_update.php ke proses_delete.php",<bbr>
+<br>"menyesuaikan isi kode proses_delete.php"<br>
+"nambahkan parameter cid untuk link delete di read.php"</lo>

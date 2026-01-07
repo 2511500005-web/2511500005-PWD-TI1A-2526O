@@ -5,3 +5,4 @@ nama saya melvyn hadi<br>
 <br>"menambah link delete di file read.php untuk ke file proses_delete.php"<br>
 <br>"copy isi file proses_update.php ke proses_delete.php",<bbr>
 <br>"menyesuaikan isi kode proses_delete.php"<br>
+"nambahkan parameter cid untuk link delete di read.php"</lo>

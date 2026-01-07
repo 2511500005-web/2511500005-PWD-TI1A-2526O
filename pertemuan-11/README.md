@@ -1,13 +1,8 @@
-Nama: Melvyn Mahinda Hadi
-NIM: 2511500005
-
+hari ini, materi terakhir untuk PWD, rabu 24 des 2025<br>
+nama saya melvyn hadi<br>
 <ol>
-<li>koneksi.php MySQL Improved</li>
-<li>Database db_pwd2025</li>
-<li>create table tbl_tamu query database db_pwd2025</li>
-<li>kode php require koneksi.php</li>
-<li>tabel read.php</li>
-<li>membuat duplikat read.php menjadi read_inc.php dan memodifikasi isi read_inc.php</li>
-<li>memodifikasi baris 146 di index.php</li>
-<li>hapus baris 133-141</li>
-Update fungsi.php untuk helper redirect sederhana (pola PRG).
+<br>import file sql localhost ke phpmyadmin pert-13<br>
+<br>"menambah link delete di file read.php untuk ke file proses_delete.php"<br>
+<br>"copy isi file proses_update.php ke proses_delete.php",<bbr>
+<br>"menyesuaikan isi kode proses_delete.php"<br>
+"nambahkan parameter cid untuk link delete di read.php"</lo>
