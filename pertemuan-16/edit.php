@@ -1,11 +1,12 @@
 <?php
 require_once 'koneksi.php';
-$kodedos = $_GET['kodedos'];
+$kodedos = $_GET['kodedos'] ?? '';
 $data = $conn->query("SELECT * FROM dosen WHERE kodedos='$kodedos'")->fetch_assoc();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+  <meta charset="UTF-8">
   <title>Edit Biodata Dosen</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -22,8 +23,10 @@ $data = $conn->query("SELECT * FROM dosen WHERE kodedos='$kodedos'")->fetch_asso
     <input type="text" name="pasangan" value="<?= $data['pasangan'] ?>">
     <input type="text" name="anak" value="<?= $data['anak'] ?>">
     <input type="text" name="ilmu" value="<?= $data['ilmu'] ?>">
-    <button type="submit">Kirim</button>
-    <button type="button" onclick="window.location='index.php'">Batal</button>
+    <div class="form-buttons">
+      <button type="submit">Kirim</button>
+      <button type="button" onclick="window.location='index.php'">Batal</button>
+    </div>
   </form>
 </body>
 </html>

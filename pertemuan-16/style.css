@@ -20,13 +20,14 @@ h1, h2 {
   margin-bottom: 20px;
 }
 
-.form-box {
+.form-box, .table-box {
   background-color: white;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
+  margin-bottom: 30px;
 }
 
 .form-box label {
@@ -63,19 +64,20 @@ button:hover {
   background-color: #0056b3;
 }
 
-.table-box {
-  background-color: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  max-width: 100%;
-  margin-top: 20px;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-footer {
-  background-color: #eee;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-  font-size: 14px;
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
 }
+
+table th {
+  background-color: #f0f0f0;
+}
+
+.success { color: green; }
+.error { color: red; }
