@@ -1,26 +1,29 @@
 <?php
 session_start();
-require __DIR__ . './koneksi.php';
+require_once __DIR__ . '/koneksi.php';
 require_once __DIR__ . '/fungsi.php';
 
-/*
-	ikuti cara penulisan proses.php untuk validasi, sanitasi, RPG, data old
-	dan insert ke tbl_tamu termasuk flash message ke index.php#biodata
-	bedanya, kali ini diterapkan untuk biodata dosen bukan tamu
-*/
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $kodedos  = sanitize($_POST['kodedos']);
+    $nama     = sanitize($_POST['nama']);
+    $alamat   = sanitize($_POST['alamat']);
+    $tanggal  = sanitize($_POST['tanggal']);
+    $jja      = sanitize($_POST['jja']);
+    $prodi    = sanitize($_POST['prodi']);
+    $nohp     = sanitize($_POST['nohp']);
+    $pasangan = sanitize($_POST['pasangan']);
+    $anak     = sanitize($_POST['anak']);
+    $ilmu     = sanitize($_POST['ilmu']);
 
-$arrBiodata = [
-  "kodedos" => $_POST["txtKodeDos"] ?? "",
-  "nama" => $_POST["txtNmDosen"] ?? "",
-  "alamat" => $_POST["txtAlRmh"] ?? "",
-  "tanggal" => $_POST["txtTglDosen"] ?? "",
-  "jja" => $_POST["txtJJA"] ?? "",
-  "prodi" => $_POST["txtProdi"] ?? "",
-  "nohp" => $_POST["txtNoHP"] ?? "",
-  "pasangan" => $_POST["txNamaPasangan"] ?? "",
-  "anak" => $_POST["txtNmAnak"] ?? "",
-  "ilmu" => $_POST["txtBidangIlmu"] ?? ""
-];
-$_SESSION["biodata"] = $arrBiodata;
+    $stmt = $conn->prepare("INSERT INTO dosen (kodedos, nama, alamat, tanggal, jja, prodi, nohp, pasangan, anak, ilmu) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssssss", $kodedos, $nama, $alamat, $tanggal, $jja, $prodi, $nohp, $pasangan, $anak, $ilmu);
 
-header("location: index.php#about");
+    if ($stmt->execute()) {
+        header("Location: index.php?status=success");
+    } else {
+        header("Location: index.php?status=failed");
+    }
+    exit();
+}
+?>
