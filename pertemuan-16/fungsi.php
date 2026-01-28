@@ -1,34 +1,18 @@
 <?php
-function redirect_ke($url)
-{
-  header("Location: " . $url);
-  exit();
+function sanitize($data) {
+    return htmlspecialchars(trim($data));
 }
 
-function bersihkan($str)
-{
-  return htmlspecialchars(trim($str));
+function tampilkanBiodata($fieldConfig, $biodata) {
+    if (empty($biodata)) {
+        return "<p>Belum ada biodata tersimpan.</p>";
+    }
+    $output = "<ul>";
+    foreach ($fieldConfig as $key => $config) {
+        $value = $biodata[$key] ?? '';
+        $output .= "<li><strong>{$config['label']}</strong> {$value}{$config['suffix']}</li>";
+    }
+    $output .= "</ul>";
+    return $output;
 }
-
-function tidakKosong($str)
-{
-  return strlen(trim($str)) > 0;
-}
-
-function formatTanggal($tgl)
-{
-  return date("d M Y H:i:s", strtotime($tgl));
-}
-
-function tampilkanBiodata($conf, $arr)
-{
-  $html = "";
-  foreach ($conf as $k => $v) {
-    $label = $v["label"];
-    $nilai = bersihkan($arr[$k] ?? '');
-    $suffix = $v["suffix"];
-
-    $html .= "<p><strong>{$label}</strong> {$nilai}{$suffix}</p>";
-  }
-  return $html;
-}
+?>

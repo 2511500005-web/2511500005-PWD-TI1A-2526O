@@ -1,26 +1,24 @@
 <?php
-require 'koneksi.php';
+require_once __DIR__ . '/koneksi.php';
 
-$fieldContact = [
-  "nama" => ["label" => "Nama:", "suffix" => ""],
-  "email" => ["label" => "Email:", "suffix" => ""],
-  "pesan" => ["label" => "Pesan Anda:", "suffix" => ""]
-];
+$sql = "SELECT * FROM kontak ORDER BY id DESC";
+$result = $conn->query($sql);
 
-$sql = "SELECT * FROM tbl_tamu ORDER BY cid DESC";
-$q = mysqli_query($conn, $sql);
-if (!$q) {
-  echo "<p>Gagal membaca data tamu: " . htmlspecialchars(mysqli_error($conn)) . "</p>";
-} elseif (mysqli_num_rows($q) === 0) {
-  echo "<p>Belum ada data tamu yang tersimpan.</p>";
+if (!$result) {
+    echo "<p class='error'>Query gagal: " . $conn->error . "</p>";
+} elseif ($result->num_rows === 0) {
+    echo "<p>Belum ada pesan masuk.</p>";
 } else {
-  while ($row = mysqli_fetch_assoc($q)) {
-    $arrContact = [
-      "nama"  => $row["cnama"]  ?? "",
-      "email" => $row["cemail"] ?? "",
-      "pesan" => $row["cpesan"] ?? "",
-    ];
-    echo tampilkanBiodata($fieldContact, $arrContact);
-  }
+    echo "<table>
+            <tr><th>Nama</th><th>Email</th><th>Pesan</th><th>Tanggal</th></tr>";
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>
+                <td>{$row['nama']}</td>
+                <td>{$row['email']}</td>
+                <td>{$row['pesan']}</td>
+                <td>{$row['tanggal']}</td>
+              </tr>";
+    }
+    echo "</table>";
 }
 ?>

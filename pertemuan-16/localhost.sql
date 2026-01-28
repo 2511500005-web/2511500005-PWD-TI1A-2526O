@@ -1,8 +1,6 @@
--- Buat database baru
 CREATE DATABASE IF NOT EXISTS db_pwd2025;
 USE db_pwd2025;
 
--- Tabel Biodata Dosen
 CREATE TABLE IF NOT EXISTS dosen (
   kodedos VARCHAR(20) PRIMARY KEY,
   nama VARCHAR(100) NOT NULL,
@@ -16,7 +14,6 @@ CREATE TABLE IF NOT EXISTS dosen (
   ilmu VARCHAR(100)
 );
 
--- Tabel Kontak Pengunjung
 CREATE TABLE IF NOT EXISTS kontak (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nama VARCHAR(100) NOT NULL,
