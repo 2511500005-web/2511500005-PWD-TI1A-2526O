@@ -1,17 +1,20 @@
 <?php
-require_once __DIR__ . '/koneksi.php';
+require_once 'koneksi.php';
 
 $sql = "SELECT * FROM dosen ORDER BY nama ASC";
 $result = $conn->query($sql);
 
-echo "<h2>Daftar Dosen</h2>";
-if (!$result) {
-    echo "<p class='error'>Query gagal: " . $conn->error . "</p>";
-} elseif ($result->num_rows === 0) {
+echo "<section id='data'>
+        <h2>Daftar Dosen</h2>
+        <div class='table-box'>";
+
+if (!$result || $result->num_rows === 0) {
     echo "<p>Belum ada data dosen.</p>";
 } else {
-    echo "<table border='1' cellpadding='5'>
-            <tr><th>Kode</th><th>Nama</th><th>Prodi</th><th>Ilmu</th></tr>";
+    echo "<table>
+            <thead>
+              <tr><th>Kode</th><th>Nama</th><th>Prodi</th><th>Bidang Ilmu</th></tr>
+            </thead><tbody>";
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
                 <td>{$row['kodedos']}</td>
@@ -20,6 +23,7 @@ if (!$result) {
                 <td>{$row['ilmu']}</td>
               </tr>";
     }
-    echo "</table>";
+    echo "</tbody></table>";
 }
+echo "</div></section>";
 ?>

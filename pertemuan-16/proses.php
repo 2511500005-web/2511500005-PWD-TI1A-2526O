@@ -1,7 +1,6 @@
 <?php
-session_start();
-require_once __DIR__ . '/koneksi.php';
-require_once __DIR__ . '/fungsi.php';
+require_once 'koneksi.php';
+require_once 'fungsi.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nama    = sanitize($_POST['txtNama']);
@@ -10,9 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $captcha = (int) $_POST['txtCaptcha'];
 
     if ($captcha !== 5) {
-        $_SESSION['flash_error'] = "Captcha salah!";
-        $_SESSION['old'] = $_POST;
-        header("Location: index.php#kontak");
+        header("Location: index.php?status=captcha_failed");
         exit();
     }
 
@@ -20,13 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("sss", $nama, $email, $pesan);
 
     if ($stmt->execute()) {
-        $_SESSION['flash_sukses'] = "Pesan berhasil dikirim!";
+        header("Location: index.php?status=contact_success");
     } else {
-        $_SESSION['flash_error'] = "Gagal menyimpan pesan!";
-        $_SESSION['old'] = $_POST;
+        header("Location: index.php?status=contact_failed");
     }
-
-    header("Location: index.php#kontak");
     exit();
 }
 ?>

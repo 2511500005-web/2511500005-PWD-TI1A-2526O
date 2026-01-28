@@ -1,11 +1,9 @@
 <?php
-require_once __DIR__ . '/koneksi.php';
-require_once __DIR__ . '/fungsi.php';
+require_once 'koneksi.php';
+require_once 'fungsi.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $stmt = $conn->prepare("INSERT INTO dosen 
-        (kodedos, nama, alamat, tanggal, jja, prodi, nohp, pasangan, anak, ilmu) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO dosen (kodedos, nama, alamat, tanggal, jja, prodi, nohp, pasangan, anak, ilmu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssssssss",
         sanitize($_POST['kodedos']),
         sanitize($_POST['nama']),

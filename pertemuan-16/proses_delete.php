@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/koneksi.php';
+require_once 'koneksi.php';
 
 $kodedos = $_GET['kodedos'] ?? '';
 

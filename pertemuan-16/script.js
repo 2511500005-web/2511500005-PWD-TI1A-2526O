@@ -1,14 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.getElementById("menuToggle");
-  const nav = document.querySelector("nav");
-
-  if (menuToggle && nav) {
-    menuToggle.addEventListener("click", () => {
-      nav.classList.toggle("active");
-    });
-  }
-
-  const txtPesan = document.getElementById("txtPesan");
+  const txtPesan = document.querySelector("textarea[name='txtPesan']");
   const charCount = document.getElementById("charCount");
 
   if (txtPesan && charCount) {
